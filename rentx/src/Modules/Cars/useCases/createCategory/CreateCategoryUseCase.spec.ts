@@ -6,11 +6,9 @@ import { CreateCategoryUseCase } from "./CreateCategoryUseCase"
 let createCategoryUseCase: CreateCategoryUseCase
 let categoriesRepositoryInMemory: CategoriesRepositoryInMemory
 
-
 describe("Create Category",() => {
     categoriesRepositoryInMemory = new CategoriesRepositoryInMemory()
     createCategoryUseCase = new CreateCategoryUseCase(categoriesRepositoryInMemory)   
-
 
         it("should be able to create a new category", async () => {
 
@@ -49,8 +47,7 @@ describe("Create Category",() => {
                 await createCategoryUseCase.execute({
                     name:category.name,
                     description:category.description
-                })
-    
+                })    
     
             }).rejects.toBeInstanceOf(AppError)        
         })
