@@ -3,8 +3,9 @@ import express, { NextFunction, Request, Response } from 'express';
 import "express-async-errors"
 import swaggerUi from 'swagger-ui-express'
 import "./database"
-import "./Shared/Container"
-import { AppError } from "./Errors/AppError";
+import "@shared/Container"
+// import { AppError } from "@errors/AppError";
+import { AppError } from "@erros/AppError";
 import { router  } from './Routes';
 import swaggerFile from './swagger.json'
 
