@@ -1,10 +1,12 @@
 import { compare } from "bcryptjs"
 import { sign } from "jsonwebtoken";
 import { inject, injectable } from "tsyringe";
+
 // import { AppError } from "../../../../Errors/AppError";
 // import { IUsersRepository } from "../../Repositories/IUsersRepository";
+// import { AppError } from "@erros/AppError";
 
-import { AppError } from "@erros/AppError";
+import { AppError } from "@shared/Errors/AppError";
 import { IUsersRepository } from "@modules/Accounts/Repositories/IUsersRepository";
 
 interface IRequest {

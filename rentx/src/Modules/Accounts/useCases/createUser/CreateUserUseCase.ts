@@ -4,8 +4,9 @@ import { hash } from "bcryptjs"
 // import { AppError } from "../../../../Errors/AppError";
 // import { ICreateUserDTO } from "../../DTOs/ICreateUserDTO";
 // import { IUsersRepository } from "../../Repositories/IUsersRepository";
+// import { AppError } from "@erros/AppError";
 
-import { AppError } from "@erros/AppError";
+import { AppError } from "@shared/Errors/AppError";
 import { ICreateUserDTO } from "@modules/Accounts/DTOs/ICreateUserDTO";
 import { IUsersRepository } from "@modules/Accounts/Repositories/IUsersRepository";
 
