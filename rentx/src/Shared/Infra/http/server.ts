@@ -5,12 +5,6 @@ import swaggerUi from 'swagger-ui-express'
 import "@shared/Infra/typeorm"
 import "@shared/Container"
 
-
-// import { AppError } from "@errors/AppError";
-// import { AppError } from "@erros/AppError";
-// import { router  } from './Routes';
-
-
 import { AppError } from "@shared/Errors/AppError";
 import swaggerFile from '../../../swagger.json'
 import { router } from "./Routes";
