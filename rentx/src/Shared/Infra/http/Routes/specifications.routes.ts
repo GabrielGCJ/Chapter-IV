@@ -3,11 +3,6 @@ import { ensureAuthenticated } from "@shared/Infra/http/Middlewares/ensureAuthen
 import { CreateSpecificationController } from "@modules/Cars/useCases/createSpecification/CreateSpecificationController";
 
 
-
-// import { ensureAuthenticated } from "../Middlewares/ensureAuthenticated";
-// import { CreateSpecificationController } from "../Modules/Cars/useCases/createSpecification/CreateSpecificationController";
-
-
 const specificationsRoutes = Router();
 
 const createSpecificationController = new CreateSpecificationController()
