@@ -1,7 +1,8 @@
 import { inject, injectable } from "tsyringe"
-import { AppError } from "@erros/AppError"
+import { AppError } from "@shared/Errors/AppError"
 import { ICategoriesRepository } from "@modules/Cars/Repositories/ICategoriesRepository"
 
+// import { AppError } from "@erros/AppError"
 // import { AppError } from "../../../../Errors/AppError"
 // import { ICategoriesRepository } from "../../Repositories/ICategoriesRepository"
 

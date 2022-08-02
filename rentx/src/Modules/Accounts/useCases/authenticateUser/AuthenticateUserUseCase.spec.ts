@@ -1,4 +1,4 @@
-import { AppError } from "@erros/AppError";
+import { AppError } from "@shared/Errors/AppError";
 import { ICreateUserDTO } from "@modules/Accounts/DTOs/ICreateUserDTO";
 import { UsersRepositoryInMemory } from "@modules/Accounts/Repositories/in-memory/UsersRepositoryInMemory";
 import { CreateUserUseCase } from "../createUser/CreateUserUseCase";
