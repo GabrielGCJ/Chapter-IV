@@ -2,7 +2,7 @@ import { inject, injectable } from "tsyringe";
 import { Category } from "@modules/Cars/Infra/typeorm/Entities/Category";
 import { ICategoriesRepository } from "@modules/Cars/Repositories/ICategoriesRepository";
 
-@injectable()
+    @injectable()
 class ListCategoriesUseCase {
     constructor (
         @inject("CategoriesRepository")
