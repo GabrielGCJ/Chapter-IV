@@ -8,6 +8,7 @@ class SpecificationsRepository implements ISpecificotionsRepository {
     constructor(){
         this.repository = getRepository(Specification)
     }
+    
 
     async create({ description, name }: ICreateSpecificationDTO): Promise<void> {
         const specification = this.repository.create({
@@ -20,6 +21,10 @@ class SpecificationsRepository implements ISpecificotionsRepository {
     async findByName(name: string): Promise<any> {
         const specification = this.repository.findOne({name})
         return specification
+    }
+
+    findByIds(ids: string[]): Promise<Specification[]> {
+        throw new Error("Method not implemented.")
     }
 }
 
