@@ -1,6 +1,6 @@
 import { Router } from "express";
 import multer from "multer"
-import { CreateCategoryControler } from "@modules/Cars/useCases/createCategory/CreateCategoryControler";
+import { CreateCategoryController } from "@modules/Cars/useCases/createCategory/CreateCategoryController";
 import { ImportCategoryController } from "@modules/Cars/useCases/importCategory/ImportCategoryController";
 import { ListCategoriesController } from "@modules/Cars/useCases/listCategories/ListCategoriesController";
 import { ensureAuthenticated } from "@shared/Infra/http/Middlewares/ensureAuthenticated";
@@ -12,14 +12,14 @@ const upload = multer({
     dest: "./tmp"
 })
 
-const createCategoryControler = new CreateCategoryControler
+const createCategoryController = new CreateCategoryController
 const importCategoryController = new ImportCategoryController
 const listCategoriesController = new ListCategoriesController
 
 categoriesRoutes.post("/",
 ensureAuthenticated,
 ensureAdmin,
-createCategoryControler.handle)
+createCategoryController.handle)
 
 categoriesRoutes.get("/",listCategoriesController.handle)
 
