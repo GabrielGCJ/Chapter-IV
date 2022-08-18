@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { CreateCategoryUseCase } from "./CreateCategoryUseCase";
 import { container } from "tsyringe"
 
-class CreateCategoryControler {    
+class CreateCategoryController {    
 
     async handle(request: Request, response: Response): Promise <Response>{
         const {name, description} = request.body  
@@ -15,4 +15,4 @@ class CreateCategoryControler {
     }
 }
 
-export { CreateCategoryControler }
+export { CreateCategoryController }
