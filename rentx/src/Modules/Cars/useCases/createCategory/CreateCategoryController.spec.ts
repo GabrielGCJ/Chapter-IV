@@ -100,12 +100,18 @@ describe("Create Category Controller", () => {
             email:"admin@admin.com.br",
             password:"admin"
         })
-            console.log(responseToken.body)
+            const { token } = responseToken.body
 
-        const response = await request(app).post("/categories").send({
-            name:"Categories Supertest",
-            description:"Categories Supertest"
-        })
+        const response = await request(app)
+            .post("/categories")
+            .send({
+                name: "Categories Supertest",
+                description: "Categories Supertest"
+            }).set({
+                Authorization: `Bearer ${token}`,
+            })
+
+
         expect(response.status).toBe(201)
     })    
 })
