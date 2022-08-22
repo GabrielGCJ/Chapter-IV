@@ -8,7 +8,7 @@ import createConnection from "@shared/Infra/typeorm";
 
 let connection: Connection;
 
-describe("Create Category Controller", () => {
+describe("List Category Controller", () => {
 
     beforeAll( async () => {
         connection = await createConnection()
@@ -25,21 +25,21 @@ describe("Create Category Controller", () => {
     })
 
     afterAll(async () => {
+
+        
         await connection.dropDatabase()
         await connection.close()
     })
 
 
-    it("should be able to create a new category", async () => {
+    it("should be able to list all categories", async () => {
         const responseToken = await request(app).post("/sessions").send({
-            email:"admin@admin.com.br",
-            password:"admin"
+            email: "admin@admin.com.br",
+            password: "admin"
         })
-            const { token } = responseToken.body
+            const { token } = responseToken.body;
 
-        const response = await request(app)
-            .post("/categories")
-            .send({
+        await request(app).post("/categories").send({
                 name: "Categories Supertest",
                 description: "Categories Supertest"
             }).set({
@@ -47,26 +47,18 @@ describe("Create Category Controller", () => {
             })
 
 
-        expect(response.status).toBe(201)
-    })    
-
-    it("should not be able to create a new category with name exists", async () => {
-        const responseToken = await request(app).post("/sessions").send({
-            email:"admin@admin.com.br",
-            password:"admin"
-        })
-            const { token } = responseToken.body
-
-        const response = await request(app)
-            .post("/categories")
-            .send({
-                name: "Categories Supertest",
-                description: "Categories Supertest"
-            }).set({
-                Authorization: `Bearer ${token}`,
+            await request(app).post("/categories").send({
+                name: "Supertest",
+                description: "Supertest"
             })
 
+            const response = await request(app).get("/categories");
 
-        expect(response.status).toBe(400)
-    })    
+            console.log(response.body);
+
+        expect(response.status).toBe(200);
+        expect(response.body.length).toBe(1);
+        expect(response.body[0]).toHaveProperty("id")
+        expect(response.body[0].name).toEqual("Categories Supertest")
+    })        
 })
