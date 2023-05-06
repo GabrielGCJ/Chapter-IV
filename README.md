@@ -1,5 +1,3 @@
-# Chapter-IV
-
 # Chapter IV - Rocketseat
 Esta é a resolução de exercicios feitos em aula referente ao chapter IV da Rocketseat, um programa de capacitação intensiva em desenvolvimento de software.
 
